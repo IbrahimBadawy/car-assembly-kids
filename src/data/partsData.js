@@ -182,6 +182,26 @@ export const RC_PARTS_DATA = [
     explodedPosition: [0, 0.5, -4],
     icon: '💡',
   },
+  {
+    id: 'rc-gearbox',
+    nameAr: 'صندوق التروس',
+    nameEn: 'Gearbox',
+    color: '#795548',
+    description: 'صندوق التروس بيحول دوران الموتور لقوة تحرك العجلات بسرعات مختلفة!',
+    assembledPosition: [0, -0.1, -0.3],
+    explodedPosition: [4, 2, -2],
+    icon: '⚙️',
+  },
+  {
+    id: 'rc-servo',
+    nameAr: 'موتور التوجيه',
+    nameEn: 'Steering Servo',
+    color: '#607D8B',
+    description: 'موتور التوجيه بيلف العجلات الأمامية يمين وشمال عشان العربية تلف!',
+    assembledPosition: [0, 0, -0.8],
+    explodedPosition: [-4, 1.5, -3],
+    icon: '🔄',
+  },
 ]
 
 export function getPartsData(mode) {

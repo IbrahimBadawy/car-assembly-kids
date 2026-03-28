@@ -101,6 +101,19 @@ const RC_PARTS = [
   },
 ]
 
+const RC_PARTS_EXTRA = [
+  {
+    id: 'rc-gearbox',
+    imagePrompt: 'Cute colorful cartoon illustration of a small gearbox transmission with visible gears for RC car for a children educational app. Brown/bronze colored housing with silver gears visible inside, 3D cartoon style, fun look, simple design suitable for 6 year old kids, white clean background, high quality illustration',
+    narrationText: 'ده صندوق التروس يا حبيبي! جواه تروس بتلف في بعض. الموتور بيلف بسرعة جداً بس مش قوي، صندوق التروس بيحول السرعة دي لقوة كبيرة تقدر تحرك العجلات. يعني بيخلي العربية تمشي بقوة على الأرض!',
+  },
+  {
+    id: 'rc-servo',
+    imagePrompt: 'Cute colorful cartoon illustration of a small steering servo motor for RC car for a children educational app. Gray/blue servo with a rotating arm on top and colorful wires, 3D cartoon style, fun look, simple design suitable for 6 year old kids, white clean background, high quality illustration',
+    narrationText: 'ده موتور التوجيه أو السيرفو يا بطل! ده موتور صغير شغلته إنه يلف العجلات الأمامية يمين وشمال. لما بتضغط على الريموت يمين، دايرة التحكم بتبعت أمر لموتور التوجيه يلف العجلات يمين وكده العربية بتلف يمين!',
+  },
+]
+
 const EXTRA_NARRATIONS = [
   {
     id: 'welcome',
@@ -269,6 +282,16 @@ async function main() {
 
   console.log('\n--- Generating RC Car Audio Narrations ---')
   for (const part of RC_PARTS) {
+    await generateAudio(part.id, part.narrationText)
+    await new Promise(r => setTimeout(r, 1500))
+  }
+
+  console.log('\n--- Generating RC Extra Parts ---')
+  for (const part of RC_PARTS_EXTRA) {
+    await generateImage(part.id, part.imagePrompt)
+    await new Promise(r => setTimeout(r, 1500))
+  }
+  for (const part of RC_PARTS_EXTRA) {
     await generateAudio(part.id, part.narrationText)
     await new Promise(r => setTimeout(r, 1500))
   }

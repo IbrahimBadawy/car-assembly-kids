@@ -17,6 +17,8 @@ import CircuitBoard from './parts/CircuitBoard'
 import RemoteControl from './parts/RemoteControl'
 import Antenna from './parts/Antenna'
 import LEDLights from './parts/LEDLights'
+import Gearbox from './parts/Gearbox'
+import SteeringServo from './parts/SteeringServo'
 import { getPartsData } from '../../data/partsData'
 import useAppStore from '../../stores/useAppStore'
 
@@ -42,6 +44,8 @@ const RC_COMPONENTS = {
   'rc-remote': RemoteControl,
   'rc-antenna': Antenna,
   'rc-lights': LEDLights,
+  'rc-gearbox': Gearbox,
+  'rc-servo': SteeringServo,
 }
 
 export default function CarModel() {
