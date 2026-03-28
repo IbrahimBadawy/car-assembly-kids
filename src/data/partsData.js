@@ -16,8 +16,7 @@ export const PARTS_DATA = [
     color: '#FF8C00',
     description: 'العجلات بتلف عشان العربية تمشي على الأرض وتوصلنا لأي مكان!',
     assembledPosition: [0, 0, 0],
-    explodedPosition: [5, 0.5, -6
-    ],
+    explodedPosition: [5, 0.5, -4],
     icon: '🛞',
   },
   {
@@ -102,6 +101,93 @@ export const PARTS_DATA = [
   },
 ]
 
-export const NARRATION_WELCOME = 'أهلاً يا حبيبي! يلا نتعلم مع بعض أجزاء العربية! اضغط على أي جزء عشان تعرف عنه حاجات حلوة!'
+export const RC_PARTS_DATA = [
+  {
+    id: 'rc-body',
+    nameAr: 'جسم العربية',
+    nameEn: 'RC Body',
+    color: '#E91E63',
+    description: 'جسم عربية الريموت صغير وخفيف ومصنوع من البلاستيك!',
+    assembledPosition: [0, 0, 0],
+    explodedPosition: [0, 3.5, 0],
+    icon: '🏎️',
+  },
+  {
+    id: 'rc-wheels',
+    nameAr: 'العجلات',
+    nameEn: 'RC Wheels',
+    color: '#FF9800',
+    description: 'عجلات صغيرة من الكاوتش بتلف بسرعة عشان العربية تجري!',
+    assembledPosition: [0, 0, 0],
+    explodedPosition: [4, 0.5, -3.5],
+    icon: '🛞',
+  },
+  {
+    id: 'rc-motor',
+    nameAr: 'الموتور الكهربائي',
+    nameEn: 'Electric Motor',
+    color: '#FF5722',
+    description: 'الموتور الكهربائي بيشتغل بالكهرباء مش بنزين زي العربية الكبيرة!',
+    assembledPosition: [0, 0, -0.5],
+    explodedPosition: [0, 2, -4.5],
+    icon: '⚡',
+  },
+  {
+    id: 'rc-battery',
+    nameAr: 'البطارية',
+    nameEn: 'Battery',
+    color: '#4CAF50',
+    description: 'البطارية بتدي الكهرباء للموتور عشان العربية تمشي! لما بتخلص بنشحنها تاني!',
+    assembledPosition: [0, -0.1, 0.3],
+    explodedPosition: [-4, 1, 3],
+    icon: '🔋',
+  },
+  {
+    id: 'rc-circuit',
+    nameAr: 'دايرة التحكم',
+    nameEn: 'Circuit Board',
+    color: '#009688',
+    description: 'دايرة التحكم دي مخ العربية! بتاخد الأوامر من الريموت وبتقول للموتور يمشي!',
+    assembledPosition: [0, 0.2, 0],
+    explodedPosition: [0, 4.5, 2],
+    icon: '🧠',
+  },
+  {
+    id: 'rc-remote',
+    nameAr: 'الريموت',
+    nameEn: 'Remote Control',
+    color: '#3F51B5',
+    description: 'الريموت بنمسكه بإيدنا ونتحكم في العربية! بنضغط يمين وشمال وقدام وورا!',
+    assembledPosition: [3, 0.5, 0],
+    explodedPosition: [5, 1.5, 0],
+    icon: '🎮',
+  },
+  {
+    id: 'rc-antenna',
+    nameAr: 'الأنتينا',
+    nameEn: 'Antenna',
+    color: '#9C27B0',
+    description: 'الأنتينا بتستقبل الإشارات من الريموت عشان العربية تعرف تعمل إيه!',
+    assembledPosition: [0, 0.8, 0.5],
+    explodedPosition: [-4, 3, -2],
+    icon: '📡',
+  },
+  {
+    id: 'rc-lights',
+    nameAr: 'لمبات LED',
+    nameEn: 'LED Lights',
+    color: '#FFEB3B',
+    description: 'لمبات LED صغيرة بتنور وبتدي شكل حلو للعربية!',
+    assembledPosition: [0, 0, 0],
+    explodedPosition: [0, 0.5, -4],
+    icon: '💡',
+  },
+]
 
+export function getPartsData(mode) {
+  return mode === 'rc' ? RC_PARTS_DATA : PARTS_DATA
+}
+
+export const NARRATION_WELCOME = 'أهلاً يا حبيبي! يلا نتعلم مع بعض أجزاء العربية! اضغط على أي جزء عشان تعرف عنه حاجات حلوة!'
 export const NARRATION_COMPLETE = 'برافو عليك يا بطل! أنت اتعلمت كل أجزاء العربية! أنت شاطر جداً!'
+export const NARRATION_RC_COMPLETE = 'برافو يا بطل! اتعلمت كل أجزاء عربية الريموت كونترول! أنت عبقري!'

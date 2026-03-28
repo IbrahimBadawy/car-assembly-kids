@@ -58,6 +58,49 @@ const PARTS = [
   },
 ]
 
+const RC_PARTS = [
+  {
+    id: 'rc-body',
+    imagePrompt: 'Cute colorful cartoon illustration of a small RC remote control car body shell for a children educational app. Bright pink/magenta plastic body, 3D cartoon style, fun racing look, simple design suitable for 6 year old kids, white clean background, high quality illustration',
+    narrationText: 'ده جسم عربية الريموت كونترول يا حبيبي! شايف إزاي هو صغير وخفيف؟ جسم عربية الريموت مصنوع من بلاستيك خفيف مش زي العربية الكبيرة اللي مصنوعة من حديد. عشان كده بتبقى خفيفة وسريعة!',
+  },
+  {
+    id: 'rc-wheels',
+    imagePrompt: 'Cute colorful cartoon illustration of small RC car rubber wheels for a children educational app. Orange hub caps, small rubber tires, 3D cartoon style, fun look, simple design suitable for 6 year old kids, white clean background, high quality illustration',
+    narrationText: 'دي عجلات عربية الريموت يا بطل! هي صغيرة بس بتلف بسرعة جداً. العجلات دي من كاوتش عشان تمسك في الأرض كويس والعربية ماتزحلقش!',
+  },
+  {
+    id: 'rc-motor',
+    imagePrompt: 'Cute colorful cartoon illustration of a small electric motor for RC car for a children educational app. Bright orange/red cylindrical motor with wires, 3D cartoon style, fun look, simple design suitable for 6 year old kids, white clean background, high quality illustration',
+    narrationText: 'ده الموتور الكهربائي يا حبيبي! ده مختلف عن محرك العربية الكبيرة. المحرك الكبير بيشتغل بالبنزين، لكن ده بيشتغل بالكهرباء من البطارية! بيلف بسرعة جداً عشان يحرك العجلات!',
+  },
+  {
+    id: 'rc-battery',
+    imagePrompt: 'Cute colorful cartoon illustration of a rechargeable battery pack for RC car for a children educational app. Bright green battery with power indicator, 3D cartoon style, fun look, simple design suitable for 6 year old kids, white clean background, high quality illustration',
+    narrationText: 'دي البطارية يا صغير! البطارية هي اللي بتدي الكهرباء للموتور عشان يشتغل. لما البطارية بتخلص العربية بتقف، وبعدين بنشحنها بالشاحن زي ما بنشحن التابلت وبترجع تشتغل تاني!',
+  },
+  {
+    id: 'rc-circuit',
+    imagePrompt: 'Cute colorful cartoon illustration of a green circuit board PCB for RC car for a children educational app. Green board with colorful electronic components and chips, 3D cartoon style, fun look, simple design suitable for 6 year old kids, white clean background, high quality illustration',
+    narrationText: 'دي دايرة التحكم يا بطل! دي مخ العربية! فيها رقائق إلكترونية صغيرة بتفهم الأوامر اللي بتيجي من الريموت. لما بتضغط يمين على الريموت، الدايرة بتقول للموتور لف يمين!',
+  },
+  {
+    id: 'rc-remote',
+    imagePrompt: 'Cute colorful cartoon illustration of a handheld RC car remote controller for a children educational app. Blue remote with joysticks and colorful buttons, 3D cartoon style, fun look, simple design suitable for 6 year old kids, white clean background, high quality illustration',
+    narrationText: 'ده الريموت كونترول يا حبيبي! ده اللي بنمسكه بإيدنا ونتحكم في العربية. فيه عصايتين صغيرين وأزرار. لما بنضغط لقدام العربية بتمشي لقدام، ولما بنضغط يمين بتلف يمين! زي السحر!',
+  },
+  {
+    id: 'rc-antenna',
+    imagePrompt: 'Cute colorful cartoon illustration of an antenna for RC car for a children educational app. Purple thin antenna rod with glowing tip and signal waves, 3D cartoon style, fun look, simple design suitable for 6 year old kids, white clean background, high quality illustration',
+    narrationText: 'دي الأنتينا يا عسل! الأنتينا هي اللي بتستقبل الإشارات من الريموت. لما بتضغط على الريموت، بيبعت إشارة في الهوا زي الموجات، والأنتينا بتلتقطها وبتبعتها لدايرة التحكم عشان تعرف تعمل إيه!',
+  },
+  {
+    id: 'rc-lights',
+    imagePrompt: 'Cute colorful cartoon illustration of small LED lights for RC car for a children educational app. Bright yellow and red LED bulbs glowing, 3D cartoon style, fun look, simple design suitable for 6 year old kids, white clean background, high quality illustration',
+    narrationText: 'دي لمبات LED يا بطل! LED دي لمبات صغيرة أوي بس بتنور جامد! في عربية الريموت بنحط لمبات LED في الأمام والورا عشان تدي شكل حلو وعشان نشوف العربية لو بنلعب بيها بالليل!',
+  },
+]
+
 const EXTRA_NARRATIONS = [
   {
     id: 'welcome',
@@ -214,6 +257,18 @@ async function main() {
 
   console.log('\n--- Generating Audio Narrations (Gemini 2.5 Flash TTS) ---')
   for (const part of PARTS) {
+    await generateAudio(part.id, part.narrationText)
+    await new Promise(r => setTimeout(r, 1500))
+  }
+
+  console.log('\n--- Generating RC Car Images ---')
+  for (const part of RC_PARTS) {
+    await generateImage(part.id, part.imagePrompt)
+    await new Promise(r => setTimeout(r, 1500))
+  }
+
+  console.log('\n--- Generating RC Car Audio Narrations ---')
+  for (const part of RC_PARTS) {
     await generateAudio(part.id, part.narrationText)
     await new Promise(r => setTimeout(r, 1500))
   }
