@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import useAppStore from '../../stores/useAppStore'
+import { assetPath } from '../../utils/assetPath'
 
 const CONFETTI_COLORS = ['#FF6B35', '#FFD166', '#06D6A0', '#118AB2', '#EF476F', '#9B5DE5', '#F15BB5', '#00BBF9']
 
@@ -41,7 +42,7 @@ export default function Celebration() {
 
       // Play completion narration
       if (!isMuted) {
-        const audio = new Audio('/assets/audio/complete.wav')
+        const audio = new Audio(assetPath('assets/audio/complete.wav'))
         audio.volume = 0.9
         audioRef.current = audio
         audio.play().catch(() => {})
@@ -84,7 +85,7 @@ export default function Celebration() {
         >
           {/* School logo */}
           <img
-            src="/assets/images/LOGO.jpg"
+            src={assetPath('assets/images/LOGO.jpg')}
             alt="مدرسة الأرض"
             style={{
               width: '80px',

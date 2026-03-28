@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import useAppStore from '../../stores/useAppStore'
+import { assetPath } from '../../utils/assetPath'
 
 export default function WelcomeScreen() {
   const setScreen = useAppStore((s) => s.setScreen)
@@ -39,7 +40,7 @@ export default function WelcomeScreen() {
       <div className="text-center animate-bounce-in">
         {/* School logo */}
         <img
-          src="/assets/images/LOGO.jpg"
+          src={assetPath('assets/images/LOGO.jpg')}
           alt="مدرسة الأرض"
           style={{
             width: '160px',

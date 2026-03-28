@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import useAppStore from '../../stores/useAppStore'
 import { PARTS_DATA } from '../../data/partsData'
+import { assetPath } from '../../utils/assetPath'
 
 export default function PartInfoPanel() {
   const selectedPart = useAppStore((s) => s.selectedPart)
@@ -15,7 +16,7 @@ export default function PartInfoPanel() {
 
   useEffect(() => {
     if (part && !isMuted) {
-      const audioPath = `/assets/audio/${part.id}.wav`
+      const audioPath = assetPath(`assets/audio/${part.id}.wav`)
       if (audioRef.current) {
         audioRef.current.pause()
         audioRef.current = null
@@ -80,7 +81,7 @@ export default function PartInfoPanel() {
           style={{ height: '176px', backgroundColor: `${part.color}12`, padding: '16px' }}
         >
           <img
-            src={`/assets/images/${part.id}.png`}
+            src={assetPath(`assets/images/${part.id}.png`)}
             alt={part.nameAr}
             className="max-w-full max-h-full object-contain drop-shadow-lg"
             onError={(e) => {

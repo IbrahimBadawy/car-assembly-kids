@@ -2,6 +2,7 @@ import PartInfoPanel from './PartInfoPanel'
 import ProgressTracker from './ProgressTracker'
 import Controls from './Controls'
 import useAppStore from '../../stores/useAppStore'
+import { assetPath } from '../../utils/assetPath'
 
 export default function HUD() {
   const selectedPart = useAppStore((s) => s.selectedPart)
@@ -38,7 +39,7 @@ export default function HUD() {
           }}
         >
           <img
-            src="/assets/images/LOGO.jpg"
+            src={assetPath('assets/images/LOGO.jpg')}
             alt="مدرسة الأرض"
             style={{
               width: '40px',
