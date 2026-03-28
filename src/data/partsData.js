@@ -198,7 +198,7 @@ export const RC_PARTS_DATA = [
     nameEn: 'Steering Servo',
     color: '#607D8B',
     description: 'موتور التوجيه بيلف العجلات الأمامية يمين وشمال عشان العربية تلف!',
-    assembledPosition: [0, 0, -0.8],
+    assembledPosition: [0, 0, 1],
     explodedPosition: [-4, 1.5, -3],
     icon: '🔄',
   },
