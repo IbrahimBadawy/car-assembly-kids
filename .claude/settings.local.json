@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx vite:*)",
+      "Bash(xxd \"D:/CLAUDE/تركيب السيارة/public/assets/audio/doors.mp3\")",
+      "Bash(node -e \":*)",
+      "Bash(node scripts/generate-assets.js)",
+      "Bash(xxd \"D:/CLAUDE/تركيب السيارة/public/assets/audio/doors.wav\")",
+      "Bash(gh repo:*)",
+      "Bash(where gh:*)"
+    ]
+  }
+}
